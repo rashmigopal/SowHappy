@@ -1,0 +1,43 @@
+.title{
+    font-weight: 800;
+    font-size: 15px;
+}
+.category{
+    text-align: left;
+    font-weight: 900;
+    color: black !important;
+}
+.modal-header{
+   /* background: url(../../assets/img/modalheader.jpg) no-repeat center;background-size: cover;*/
+    color:Black ;
+    font-weight: 900;
+    float: center;
+    font: bold;
+}
+/* .card [data-background-color="blue"] {
+    background: #2e6da4;
+}
+.card{
+    background: url(../../assets/img/tiles.jpg); 
+}*/
+.sidebar[data-color="green"] .nav li.active a, .off-canvas-sidebar[data-color="green"] .nav li.active a {
+    background-color: #2e6da4;
+}
+        .bg-red{
+            background: red;
+        }
+        ul{
+            list-style: none;
+        }        
+        .form-group .checkbox label, .form-group .radio label, .form-group label{
+            color: 'black';
+
+        }
+    .scrollDiv{
+        max-height:200px;
+        overflow-y:scroll; 
+    }
+    .postDiv{
+        height: 500px;
+        
+    }

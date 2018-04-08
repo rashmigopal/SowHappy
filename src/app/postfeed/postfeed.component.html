@@ -1,0 +1,143 @@
+<div class="main-content">
+        <div class="container-fluid">
+          <!-- <div class="dropdown">
+                <button class="btn dropdown-toggle" style="background: #383624" type="button" data-toggle="dropdown">Pick Details Based Nn Role
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                        <li>
+                                <a >All Post</a>
+                            </li>
+                    <li>
+                        <a >LandLord</a>
+                    </li>
+                    <li>
+                        <a>Producer</a>
+                    </li>
+                    <li>
+                        <a >Consumer</a>
+                    </li>
+                    <li>
+                        <a >Service Provider</a>
+                    </li>
+                </ul>
+            </div>-->
+            <div class="col-md-2">
+                    <h3 style="font:bold;color:white;">Pick Details Based On Role</h3>
+                    <select class="form-control" (change)="changeEvent($event.target.value)">
+                      <option selected>Your seeing all posts</option>
+                      <option>Landlord Post</option>
+                      <option>Producer Post</option>
+                      <option>Consumer Post</option>
+                      <option>Service Provider Post</option>
+                    </select>
+                  </div>
+            <div class="row">
+                <div class="col-md-11">
+    
+                    <div class="card">
+                        <div class="card-header" data-background-color="green">
+                            <h4 class="title">Post Board</h4>
+                            <p class="category">Want to know what others shared !!! </p>
+                        </div>
+                        <div class="card-content">
+                            <div id="typography">
+                                <table class="table">
+                                   <thead>
+                                        <tr>
+                                            <th>Poster</th>
+                                            <th>Post Title</th>
+                                            <th>Address</th>
+                                            <th>Phone </th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let main of mainArray">
+                                        <tr *ngFor="let m of main">
+                                            <td>{{m.username}}</td>
+                                            <td>{{m.postTitle}}</td>
+                                            <td>{{m.loactionAddress}}</td>
+                                            <td><i class="material-icons"
+                                                style="color:grey" (click)="sendContactInfo('top','center')">phone</i>
+                                           
+                                        </td>
+                                            <td> <i class="material-icons" style="color:grey" data-toggle="modal" data-target="#mailModal">email</i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                       <!-- <div class="card-content">
+                            <div id="typography">
+                                <div class="tim-typo" *ngFor="let producer of producers">
+                                    <p>
+                                        <span class="tim-note">{{producer.username}} </span>
+                                    </p>
+                                    {{producer.postTitle}}{{producer.loactionAddress}} &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons"
+                                        style="color:grey" (click)="sendContactInfo('top','center')">phone</i>&nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons" style="color:grey" data-toggle="modal" data-target="#mailModal">email</i>
+                                </div>
+    
+                            </div>
+                        </div>
+    
+                        <div class="card-content">
+                            <div id="typography">
+                                <div class="tim-typo" *ngFor="let consumer of consumers">
+                                    <p>
+                                        <span class="tim-note">{{consumer.username}} </span>
+                                    </p>
+                                    {{consumer.postTitle}}{{consumer.loactionAddress}} &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons"
+                                        style="color:grey" (click)="sendContactInfo('top','center')">phone</i>&nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons" style="color:grey" data-toggle="modal" data-target="#mailModal">email</i>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div id="typography">
+                                <div class="tim-typo" *ngFor="let service of services">
+                                    <p>
+                                        <span class="tim-note">{{service.username}} </span>
+                                    </p>
+                                    {{service.postTitle}}{{service.loactionAddress}} &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons"
+                                        style="color:grey" (click)="sendContactInfo('top','center')">phone</i>&nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="material-icons" style="color:grey" data-toggle="modal" data-target="#mailModal">email</i>
+                                </div>
+    
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Mail Modal -->
+            <div class="modal fade" id="mailModal" tabindex="-1" role="dialog" aria-labelledby="mailmodal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="mailmodal">Email</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="mailform" id="mailform">
+    
+                                <div class="form-group">
+                                    <label for="MAIL_CONTENT">MAIL CONTENT</label>
+                                    <textarea autosize class="form-control" id="COMPANY_NAME" formControlName="MAIL_CONTENT"></textarea>
+                                </div>
+    
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Send</button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>

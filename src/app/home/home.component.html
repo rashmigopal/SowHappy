@@ -1,0 +1,623 @@
+<div class="main-content">
+    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="orange">
+                           <!-- <i class="material-icons">accessibility</i>-->
+                            <img alt="User Image" src="../../assets/img/landlord.png" style="width:50px; height:50px">
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                    <h3 >30 <i class="material-icons">face</i> <!-- <small>GB</small> --> </h3>
+                            </div>
+                            <h3 class="title">LandLord</h3>
+                            <p class="category">Lease/Rent out your unused agriculture land near you etc....</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <!-- <span><i class="material-icons list">list</i> Get List...</span> -->
+                               <!--  <span><i class="material-icons"  (click)="showNotification('top','center')" data-toggle="modal" data-target="#exampleModal" >list</i> Share what you have</span> -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#landlordModal">Post land Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="green">
+                            <!--<i class="material-icons">rowing</i>-->
+                             <img alt="User Image" src="../../assets/img/producer.png" style="width:50px; height:50px">
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                    <h3>100<i class="material-icons">face</i></h3>
+                            </div>
+                            <h3 class="title">Producer</h3>
+                            <p class="category">Toddle farming from here, connect to landowners and cosumers</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#producerModal" >Start Sowing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="red">
+                           <!-- <i class="material-icons">perm_identity</i>-->
+                              <img alt="User Image" src="../../assets/img/consumer.png" style="width:50px; height:50px">
+                        </div>
+                        <div class="card-content">
+                                <div>
+                                        <h3 >175<i class="material-icons">face</i></h3>
+                                      
+                                </div>
+                            <h3 class="title">Consumer</h3>
+                            <p class="category">Place your demand like Organic Vegetable, Fruits, Pulses etc.. </p>
+                           <!-- <h3 >175<i class="material-icons">face</i></h3>-->
+                        </div>
+                       
+                        <div class="card-footer">
+                            <div class="stats">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#consumerModal" >Place Demand</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="blue">
+                            <!--<i class="material-icons">supervisor_account</i>-->
+                              <img alt="User Image" src="../../assets/img/service2.png" style="width:50px; height:50px">
+                        </div>
+                        <div class="card-content">
+                                <div>
+                                        <h3 >45<i class="material-icons">face</i></h3>
+                                </div>
+                            <h3 class="title">Service Provider</h3>
+                            <p class="category">Register your service like 
+                                Manure, irrigation, Transportation, Insurance..</p>
+
+                       
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#serviceModal" >Register Services</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  weather  -->
+
+
+            <div class="row">
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card card-nav-tabs" style="background: white !important">
+                            <div class="card-header table-responsive" data-background-color="orange">
+                                <P class="title">Trending Land Posts</P>
+                            </div>
+    
+                            <div class="card-content table-responsive postDiv">
+                                <table class="table table-hover">
+                                    <thead class="category">
+                                        <tr>
+                                        <th></th>
+                                        <th>Post</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <ng-container *ngFor="let data of trendData">
+                                         <tr>
+                                            <th>
+                                                   <div style="float:right;padding-bottom: 5px;">{{data.likes}} </div><sup><img alt="User Image" src="../../assets/img/trending.png" style="width:40px; height:30px"></sup>
+                                            </th>
+                                            
+                                            <th>
+                                                    {{data.postTitle}}
+                                             </th>
+                                        </tr>   
+                                    </ng-container>
+
+                                    </tbody>
+                                </table>
+                                  
+                            </div>
+                                </div>
+                        </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card card-nav-tabs" style="background: white !important">
+                            <div class="card-header table-responsive" style="background: linear-gradient(60deg, #065a0a, #1c7d20)">
+                                <P class="title">Purely Organic</P>
+                            </div>
+    
+                            <div class="card-content table-responsive postDiv">
+                                <table class="table table-hover">
+                                    <thead class="category">
+                                        <tr>
+                                        <th></th>
+                                        <th>Service</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <ng-container *ngFor="let data of serviceProviderManure">
+                                         <tr>
+                                            <th>
+                                                   <img alt="User Image" src="../../assets/img/contact.png" style="width:40px; height:40px">
+                                            </th>
+                                            
+                                            <th>
+                                                    {{data.postTitle}}
+                                             </th>
+                                        </tr>   
+                                    </ng-container>
+
+                                     <!--   <tr>
+                                            <th>
+                                                    <img alt="User Image" src="../../assets/img/tomato.png" style="width:50px; height:50px">
+                                            </th>
+                                            <th>
+                                                   Tomato
+                                            </th>
+                                            <th>
+                                                    20%
+                                             </th>
+                                        </tr>
+                                        <tr>
+                                                <th>
+                                                        <img alt="User Image" src="../../assets/img/potato.jpg" style="width:50px; height:50px">
+                                                </th>
+                                                <th>
+                                                       Potato
+                                                </th>
+                                                <th>
+                                                        15%
+                                                 </th>
+                                            </tr>
+                                            -->
+                                    </tbody>
+                                </table>
+                                  
+                            </div>
+                                </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12">
+                                <div class="card card-nav-tabs" style="background: white !important">
+                                        <div class="card-header table-responsive " data-background-color="red">
+                                                <P class="title">Top 5 Yields In Demand</P>
+                                            </div>
+                    
+                                            <div class="card-content table-responsive scrollDiv">
+                                                <table class="table table-hover">
+                                                    <thead class="category">
+                                                        <tr>
+                                                        <th></th>
+                                                        <th>Crop</th>
+                                                        <th>Percentage</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                    <img alt="User Image" src="../../assets/img/tomato.png" style="width:50px; height:50px">
+                                                            </th>
+                                                            <th>
+                                                                   Tomato
+                                                            </th>
+                                                            <th>
+                                                                    20%
+                                                             </th>
+                                                        </tr>
+                                                        <tr>
+                                                                <th>
+                                                                        <img alt="User Image" src="../../assets/img/potato.jpg" style="width:50px; height:50px">
+                                                                </th>
+                                                                <th>
+                                                                       Potato
+                                                                </th>
+                                                                <th>
+                                                                        15%
+                                                                 </th>
+                                                            </tr>
+                                                            <tr>
+                                                                    <th>
+                                                                            <img alt="User Image" src="../../assets/img/orange.jpg" style="width:50px; height:50px">
+                                                                    </th>
+                                                                    <th>
+                                                                           Orange
+                                                                    </th>
+                                                                    <th>
+                                                                            15%
+                                                                     </th>
+                                                                </tr>
+                                                                <tr>
+                                                                        <th>
+                                                                                <img alt="User Image" src="../../assets/img/rice.jpg" style="width:50px; height:50px">
+                                                                        </th>
+                                                                        <th>
+                                                                               Rice
+                                                                        </th>
+                                                                        <th>
+                                                                                20%
+                                                                         </th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                            <th>
+                                                                                    <img alt="User Image" src="../../assets/img/wheat.png" style="width:50px; height:50px">
+                                                                            </th>
+                                                                            <th>
+                                                                                   Wheat
+                                                                            </th>
+                                                                            <th>
+                                                                                    20%
+                                                                             </th>
+                                                                        </tr>
+            
+                                                    </tbody>
+                                                </table>
+                                                  
+                                            </div>
+                                                </div>
+                                                <div class="card card-nav-tabs" style="background: white !important">
+                                        <div class="card-header table-responsive" data-background-color="green">
+                                                <P class="title">Top 5 Yields In Demand</P>
+                                            </div>
+                    
+                                            <div class="card-content table-responsive scrollDiv">
+                                                <table class="table table-hover">
+                                                    <thead class="category">
+                                                        <tr>
+                                                        <th></th>
+                                                        <th>Crop</th>
+                                                        <th>Percentage</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                    <img alt="User Image" src="../../assets/img/tomato.png" style="width:50px; height:50px">
+                                                            </th>
+                                                            <th>
+                                                                   Tomato
+                                                            </th>
+                                                            <th>
+                                                                    20%
+                                                             </th>
+                                                        </tr>
+                                                        <tr>
+                                                                <th>
+                                                                        <img alt="User Image" src="../../assets/img/potato.jpg" style="width:50px; height:50px">
+                                                                </th>
+                                                                <th>
+                                                                       Potato
+                                                                </th>
+                                                                <th>
+                                                                        15%
+                                                                 </th>
+                                                            </tr>
+                                                            <tr>
+                                                                    <th>
+                                                                            <img alt="User Image" src="../../assets/img/orange.jpg" style="width:50px; height:50px">
+                                                                    </th>
+                                                                    <th>
+                                                                           Orange
+                                                                    </th>
+                                                                    <th>
+                                                                            15%
+                                                                     </th>
+                                                                </tr>
+                                                                <tr>
+                                                                        <th>
+                                                                                <img alt="User Image" src="../../assets/img/rice.jpg" style="width:50px; height:50px">
+                                                                        </th>
+                                                                        <th>
+                                                                               Rice
+                                                                        </th>
+                                                                        <th>
+                                                                                20%
+                                                                         </th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                            <th>
+                                                                                    <img alt="User Image" src="../../assets/img/wheat.png" style="width:50px; height:50px">
+                                                                            </th>
+                                                                            <th>
+                                                                                   Wheat
+                                                                            </th>
+                                                                            <th>
+                                                                                    20%
+                                                                             </th>
+                                                                        </tr>
+            
+                                                    </tbody>
+                                                </table>
+                                                  
+                                            </div>
+                                                </div>
+                                
+                                </div>
+
+                                <!--<div class="col-md-4">
+                                        <div class="card" style="background: white !important">
+                                            <div class="card-header" data-background-color="green">
+                                               <p >What's the Weather Today?</p>
+                                            </div>
+                                            <div class="card-content">
+                                                    <span><img src="/assets/img/sunny.png" alt="Smiley face" style="float:center;width:80px;height:80px;"></span>   
+                                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <span><B style="font-size: 30px;">33 &#8451; </B> <span style="font-size: 20px;">Bengaluru</span></span> 
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="stats">
+                                                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                    </div>
+    
+
+            
+               
+            
+               <!--  <div class="col-lg-6 col-md-12">
+                    <div class="card" >
+                        <div class="card-header" data-background-color="orange">
+                            <h4 class="title">Employees Stats</h4>
+                            <p class="category">New employees on 15th September, 2016</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Salary</th>
+                                        <th>Country</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Dakota Rice</td>
+                                        <td>$36,738</td>
+                                        <td>Niger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Minerva Hooper</td>
+                                        <td>$23,789</td>
+                                        <td>Curaçao</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Sage Rodriguez</td>
+                                        <td>$56,142</td>
+                                        <td>Netherlands</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Philip Chaney</td>
+                                        <td>$38,735</td>
+                                        <td>Korea, South</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> 
+            </div> -->
+        </div>
+</div>
+
+<!-- landlord Modal -->
+<div class="modal fade" id="landlordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: #ffa726;">
+                <h5 class="modal-title" id="exampleModalLabel">Land Owners Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="landLordForm" id="landLordForm">
+                    <!-- <input type="hidden" formControlName="initiativeId">-->
+                    <div class="form-group">
+                        <label for="TITLE">Post Title</label>
+                        <input type="text" class="form-control" id="TITLE" formControlName="TITLE">
+                    </div>
+                    <div class="form-group">
+                        <label for="LAND_NAME">Landname</label>
+                        <input type="text" class="form-control" id="LAND_NAME" formControlName="LAND_NAME">
+                    </div>
+                    <div class="form-group">
+                        <label for="LOCATION">Location of Land</label>
+                        <textarea autosize class="form-control" id="LOCATION" formControlName="LOCATION"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="AREA">Area of Land(in Sqft)</label>
+                        <textarea autosize class="form-control" id="AREA" formControlName="AREA"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="OFFER_TYPE">RENT/LEASE: </label>
+                        <select id="OFFER_TYPE">
+                            <option value="" style="display:none">Choose one below</option>
+                            <option value="RENT">RENT</option>
+                            <option value="LEASE">LEASE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="RATE">Rate in Rs(Per Month basis)</label>
+                        <textarea autosize class="form-control" id="RATE" formControlName="RATE"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="SOIL">SOIL TYPE</label>
+                        <textarea autosize class="form-control" id="SOIL" formControlName="SOIL"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="WATER">WATER AVAILABLE : </label>
+                        <select id="WATER">
+                            <option value="" style="display:none">Choose Yes/No</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producer Modal -->
+<div class="modal fade" id="producerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: green">
+                <h5 class="modal-title" id="exampleModalLabel">Producer Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="producerForm" id="producerForm">
+                    <!-- <input type="hidden" formControlName="initiativeId">-->
+                    <div class="form-group">
+                        <label for="TITLE">Post Title</label>
+                        <input type="text" class="form-control" id="TITLE" formControlName="TITLE">
+                    </div>
+                    <div class="form-group">
+                        <label for="CROP_NAME">Name of Crop</label>
+                        <textarea autosize class="form-control" id="CROP_NAME" formControlName="CROP_NAME"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="TENTATIVE_YIELD">Yield Available on (Date) :</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="QUANTITY">Quantity Available(in kgs) : </label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="ORGANIC">Organic Yield:</label>
+                        <select id="ORGANIC">
+                            <option value="" style="display:none">Choose Yes/No</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="INSURED">Is the Land Insured:</label>
+                        <select id="INSURED">
+                            <option value="" style="display:none">Choose Yes/No</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Consumer Modal -->
+<div class="modal fade" id="consumerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: red">
+                <h5 class="modal-title" id="exampleModalLabel">Consumer Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="consumerForm" id="consumerForm">
+                    <!-- <input type="hidden" formControlName="initiativeId">-->
+                    <div class="form-group">
+                        <label for="TITLE">Post title</label>
+                        <input type="text" class="form-control" id="TITLE" formControlName="TITLE">
+                    </div>
+                    <div class="form-group">
+                        <label for="CROP_NAME">Name of Crop</label>
+                        <textarea autosize class="form-control" id="CROP_NAME" formControlName="CROP_NAME"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="DEMAND_DATE">Yield required on (Date) :</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="QUANTITY">Quantity required(in kgs) : </label>
+                        <input type="text">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Service provider Modal -->
+<div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#00acc1">
+                <h5 class="modal-title" id="exampleModalLabel">Service Provider Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="serviceForm" id="serviceForm">
+                    <!-- <input type="hidden" formControlName="initiativeId">-->
+                    <div class="form-group">
+                        <label for="TITLE">Post Title</label>
+                        <input type="text" class="form-control" id="TITLE" formControlName="TITLE">
+                    </div>
+                    <div class="form-group">
+                        <label for="SERVICE_TYPE">Kind of Services Available: </label>
+                        <select id="SERVICE_TYPE">
+                            <option value="" style="display:none">Choose one below</option>
+                            <option value="WATER">WATER</option>
+                            <option value="MANURE">MANURE</option>
+                            <option value="TRANSPORT">TRANSPORT</option>
+                            <option value="SEEDS">SEEDS</option>
+                            <option value="INSURANCE">INSURANCE</option>
+                            <option value="OTHERS">OTHERS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="COMPANY_NAME">Name of Service Company</label>
+                        <textarea autosize class="form-control" id="COMPANY_NAME" formControlName="COMPANY_NAME"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="LOCATION">Service Location</label>
+                        <textarea autosize class="form-control" id="LOCATION" formControlName="LOCATION"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

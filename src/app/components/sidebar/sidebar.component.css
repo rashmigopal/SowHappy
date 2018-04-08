@@ -1,0 +1,14 @@
+ .logo-img{
+    width : 200px;
+    height: 200px;
+} 
+
+.colortext{
+    color:white;
+}
+
+.sidebar .logo, .logo {
+    position: relative;
+    padding: 0px;
+    z-index: 4;
+}
